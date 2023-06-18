@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Roomie",
+        "content": "Todos necesitan filtrar de alguna manera la elección del Roomie perfecto. Con RoomMy puedes estar un paso más cerca de conocerlo.",
+        "description": "1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto, in facere quia perspiciatis placeat deserunt quod nihil molestias cumque libero at inventore veritatis recusandae cum ipsam tempore qui! Natus.",
+        "open": true
+    },
+    {
+        "id": 2,
+        "title": "Dormitorio",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto, in facere quia perspiciatis placeat deserunt quod nihil molestias cumque libero at inventore veritatis recusandae cum ipsam tempore qui! Natus.",
+        "description":"2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto, in facere quia perspiciatis placeat deserunt quod nihil molestias cumque libero at inventore veritatis recusandae cum ipsam tempore qui! Natus.",
+        "open": false
+    },
+    {
+        "id": 3,
+        "title": "Propiedad",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto, in facere quia perspiciatis placeat deserunt quod nihil molestias cumque libero at inventore veritatis recusandae cum ipsam tempore qui! Natus.",
+        "description":"3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto, in facere quia perspiciatis placeat deserunt quod nihil molestias cumque libero at inventore veritatis recusandae cum ipsam tempore qui! Natus.",
+        "open": false
+    }
+]
