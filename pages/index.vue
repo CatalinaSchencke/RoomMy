@@ -3,5 +3,7 @@
         <HomeBanner />
         <HomeOptions />
         <HomeAccordion />
+        <HomeAbout />
+        <HomeContact />
     </div>
 </template>
