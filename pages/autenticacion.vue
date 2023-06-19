@@ -2,7 +2,7 @@
     <div class="contenedor" ref="container">
         <div class="forms-container">
             <div class="signin-signup">
-                <form action="./home-roomie.html" class="sign-in-form needs-validation2">
+                <form action="/dashboard" class="sign-in-form needs-validation2">
                     <h2 class="title">Ingresar</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
@@ -24,7 +24,7 @@
 
                     </div>
                 </form>
-                <form action="./switch.html" class="sign-up-form needs-validation" novalidate>
+                <form action="/opciones" class="sign-up-form needs-validation" novalidate>
                     <h2 class="title" id="registrarse-title">Registrarse</h2>
                     <div class="campos">
                         <div class="input-field">
