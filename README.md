@@ -15,11 +15,14 @@ En próxima entrega se agregará la carga de información a los perfiles.
 ## **Comandos**
 
 Para correr el proyecto, deben utilizar los siguientes comandos (se debe tener pnpm instalado):
-<br>
-> `pnpm install`
-<br>
-> `pnpm dev -o`
 
+```bash
+# Instalamos las dependencias
+pnpm install
+
+# Corremos el servidor local de NUXT
+pnpm dev -o
+```
 ## Maquetación
 
 El diseño fue realizado en Figma, puedes acceder mediante [este link](https://www.figma.com/file/Wnk55t9fBHhpt2tAZjOA5P/RoomMy?node-id=262%3A86&t=jfNekj3H2HKhJAZ2-1).
