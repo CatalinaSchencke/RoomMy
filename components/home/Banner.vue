@@ -10,7 +10,7 @@
           Desde encontrar a un compañero para compartir hasta arriendar una habitación o propiedad completa.
         </p>
         <div class="flex justify-center">
-          <nuxt-link to="/autenticacion"
+          <nuxt-link to="/autenticacion/registrarse"
             class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg  bg-darken-blue hover:bg-primary-blue focus:ring-4 focus:ring-primary-300">
             Comienza Aquí
             <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

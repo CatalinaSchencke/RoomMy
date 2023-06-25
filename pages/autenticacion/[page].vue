@@ -588,11 +588,22 @@ header {
 </style>
 <script setup>
 
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
-const signInBtn = ref(null);
-const signUpBtn = ref(null)
+const route = useRoute();
 const container = ref(null);
+
+onMounted(() => {
+    if (route.params.page === "login") {
+        removeSignUpMode();
+    }
+    else if (route.params.page === "registrarse") {
+        addSignUpMode();
+    }
+    else {
+        removeSignUpMode();
+    }
+});
 
 const addSignUpMode = () => {
     container.value.classList.add("sign-up-mode");

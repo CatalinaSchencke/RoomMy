@@ -33,13 +33,13 @@
           </div>
         </div>
         <div class="flex md:order-2 items-center">
-          <nuxt-link to="/autenticacion">
+          <nuxt-link to="/autenticacion/registrarse">
             <button type="button"
               class="hidden md:block mr-3 text-gray-500 hover:text-primary-blue focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2 text-center px-5   ">
               Registrarse
             </button>
           </nuxt-link>
-          <nuxt-link to="/autenticacion">
+          <nuxt-link to="/autenticacion/login">
             <button type="button"
               class=" rounded-full  text-white bg-darken-blue hover:bg-primary-blue  focus:outline-none font-medium  text-sm px-5 py-2 text-center mr-3 md:mr-0">
               Iniciar Sesión
