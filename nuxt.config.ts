@@ -13,6 +13,10 @@ export default defineNuxtConfig({
           crossorigin: 'anonymous',
         }
       ]
-    }
+    },
+    layoutTransition: {
+      name: 'layout',
+      mode: 'out-in'
+    },
   }
 })
