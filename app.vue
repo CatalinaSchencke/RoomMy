@@ -22,4 +22,17 @@ body {
 .layout-leave-to {
   opacity: 0;
 }
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.13s;
+}
+
+.page-enter-from {
+  opacity: 0;
+}
+
+.page-leave-to {
+  opacity: 0;
+}
 </style>
