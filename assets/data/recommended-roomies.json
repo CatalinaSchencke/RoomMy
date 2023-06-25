@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Alan Doe",
+        "characteristics": [
+            "Hombre",
+            "Acepta mascotas",
+            "Presupuesto similar",
+            "Misma busqueda de localización"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Jamie Doe",
+        "characteristics": [
+            "No binario",
+            "Tiene mascota",
+            "Presupuesto similar",
+            "2/3 localidades similares"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Mary Doe",
+        "characteristics": [
+            "Mujer",
+            "Estudiante",
+            "Presupuesto similar",
+            "Misma busqueda de localización"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Elizabeth Doe",
+        "characteristics": [
+            "Mujer",
+            "Busca con 2 personas más",
+            "Presupuesto similar",
+            "3/4 localidades similares"
+        ]
+    }
+]
