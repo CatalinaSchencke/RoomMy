@@ -1,7 +1,7 @@
 <template>
     <section class="py-24 sm:py-32 mx-auto max-w-7xl w-11/12 md:w-10/12">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-8 place-items-start">
-            <div class="bg-white rounded-t-xl drop-shadow-xl">
+            <div class="bg-white rounded-xl drop-shadow-xl overflow-hidden">
                 <HomeCommonAccordionElement v-for="element in accordionData" :key="element.id"
                     @toggle-accordion="toggleAccordion" :id="element.id" :title="element.title" :content="element.content"
                     :open="element.open" />
