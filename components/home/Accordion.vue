@@ -49,13 +49,12 @@ const toggleAccordion = (id) => {
     accordionData.value = accordionData.value.map(element => {
         if (element.id == id) {
             element = { ...element, open: !element.open };
+            if (element.open == true) {
+                currentlyOpenAccordionDescription.value = element.description;
+            }
         }
         else {
             element = { ...element, open: false };
-        }
-
-        if (element.open == true) {
-            currentlyOpenAccordionDescription.value = element.description;
         }
 
         return element;
