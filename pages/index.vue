@@ -2,8 +2,8 @@
     <div>
         <HomeBanner />
         <HomeOptions />
-        <HomeAccordion />
-        <HomeAbout />
-        <HomeContact />
+        <HomeAccordion id="comoFunciona" />
+        <HomeAbout id="nosotros" />
+        <HomeContact id="contacto" />
     </div>
 </template>

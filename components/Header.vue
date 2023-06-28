@@ -12,19 +12,19 @@
             <ul
               class="flex flex-col p-4 mt-4 border text-sm border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium md:border-0 ">
               <li>
-                <nuxt-link to="/como-funciona"
-                  class="block  pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary-blue md:p-0">
+                <nuxt-link to="#comoFunciona" class="block pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent
+                  md:hover:text-primary-blue md:p-0">
                   ¿Cómo funciona?
                 </nuxt-link>
               </li>
               <li>
-                <nuxt-link to="/nosotros"
+                <nuxt-link to="#nosotros"
                   class="block pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary-blue md:p-0">
                   Sobre Nosotros
                 </nuxt-link>
               </li>
               <li>
-                <nuxt-link to="/contacto"
+                <nuxt-link to="#contacto"
                   class="block pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary-blue md:p-0">
                   Contacto
                 </nuxt-link>
