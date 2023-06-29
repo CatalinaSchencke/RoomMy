@@ -2,7 +2,7 @@
     <div class="contenedor" ref="container">
         <div class="forms-container">
             <div class="signin-signup">
-                <form action="/dashboard" class="sign-in-form">
+                <form class="sign-in-form" @submit.prevent>
                     <h2 class="title">Ingresar</h2>
                     <div class="space-y-3">
                         <div>
@@ -56,9 +56,10 @@
                             </div>
                         </div>
                     </div>
-                    <input type="submit" value="Ingresar"
-                        class="cursor-pointer mt-2 px-6 py-2 rounded-full bg-darken-blue disabled:bg-darken-blue/30 text-white disabled:cursor-not-allowed"
-                        :disabled="v$login.$invalid" />
+                    <CommonButton text="Ingresar" type="submit" @click="login" :disabled="v$login.$invalid" />
+                    <div v-if="error.login" class="pt-3">
+                        <p class="text-red-500 text-sm">{{ error.loginMessage }}</p>
+                    </div>
                     <p class="social-text">O ingresa con alguna de las siguientes plataformas</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
@@ -70,29 +71,29 @@
 
                     </div>
                 </form>
-                <form action="/opciones" class="sign-up-form" novalidate>
+                <form class="sign-up-form" novalidate @submit.prevent>
                     <h2 class="title" id="registrarse-title">Registrarse</h2>
                     <div class="space-y-3 campos">
                         <div>
                             <AuthInputContainer class="grid grid-cols-10" :class="{
-                                'border-red-400': v$register.username.$error,
-                                'border-blue-400': !v$register.username.$invalid,
+                                'border-red-400': v$register.name.$error,
+                                'border-blue-400': !v$register.name.$invalid,
                             }">
                                 <div class="col-span-1">
                                     <i class="fas fa-user text-gray-400" :class="{
-                                        'text-red-400': v$register.username.$error,
-                                        'text-blue-400': !v$register.username.$invalid,
+                                        'text-red-400': v$register.name.$error,
+                                        'text-blue-400': !v$register.name.$invalid,
                                     }"></i>
                                 </div>
                                 <div class="col-span-9">
                                     <input class="focus:outline-none text-sm bg-[#f0f0f0] w-full" :class="{
-                                    }" type="text" placeholder="Nombre de usuario" v-model="registerData.username"
-                                        @change="v$register.username.$touch" />
+                                    }" type="text" placeholder="Nombre de usuario" v-model="registerData.name"
+                                        @change="v$register.name.$touch" />
                                 </div>
                             </AuthInputContainer>
                             <div v-if="v$register.email.$errors" class="pt-2">
                                 <ul class="text-red-500 text-xs">
-                                    <li v-for="error in v$register.username.$errors" :key="error.$uid">
+                                    <li v-for="error in v$register.name.$errors" :key="error.$uid">
                                         {{ error.$message }}
                                     </li>
                                 </ul>
@@ -149,9 +150,10 @@
                             </div>
                         </div>
                     </div>
-                    <input type="submit" value="Registrarse"
-                        class="cursor-pointer mt-2 px-6 py-2 rounded-full bg-darken-blue disabled:bg-darken-blue/30 text-white disabled:cursor-not-allowed"
-                        :disabled="v$register.$invalid" />
+                    <CommonButton text="Registrarse" type="submit" :disabled="v$register.$invalid" @click="register" />
+                    <div v-if="error.register" class="pt-3">
+                        <p class="text-red-500 text-sm">{{ error.registerMessage }}</p>
+                    </div>
                     <p class="social-text">O registrate con alguna de las siguientes plataformas</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
@@ -161,7 +163,6 @@
                             <i class="fab fa-google"></i>
                         </a>
                     </div>
-
                 </form>
             </div>
         </div>
@@ -633,9 +634,22 @@ header {
 import { ref, onMounted, computed } from 'vue';
 import { required, email, minLength, helpers } from '@vuelidate/validators';
 import { useVuelidate } from '@vuelidate/core';
+import { useUserStore } from '~/stores/UserStore';
+
+const userStore = useUserStore();
+const loginUri = 'http://localhost:3001/login'
+const registerUri = 'http://localhost:3001/register'
 
 const route = useRoute();
+const router = useRouter();
 const container = ref(null);
+
+const error = reactive({
+    login: false,
+    register: false,
+    loginMessage: "",
+    registerMessage: ""
+});
 
 const loginData = reactive({
     email: '',
@@ -643,10 +657,82 @@ const loginData = reactive({
 })
 
 const registerData = reactive({
-    username: '',
+    name: '',
     email: '',
     password: ''
 })
+
+onMounted(() => {
+
+    const currentPage = route.params.auth;
+
+    if (currentPage === "registrarse") {
+        addSignUpMode();
+    }
+    else {
+        removeSignUpMode();
+    }
+});
+
+
+const login = async () => {
+    const { data } = await useFetch(loginUri, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: loginData,
+    });
+
+    const response = data.value;
+
+    if (response.error) {
+        error.login = true;
+        error.loginMessage = response.message;
+        return;
+    }
+
+    let user = response.user;
+    userStore.setUser(user);
+    userStore.setLoggedIn(true);
+    router.push({ path: '/dashboard' });
+}
+
+const register = async () => {
+    const { data } = await useFetch(registerUri, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: registerData,
+    });
+
+    const response = data.value;
+
+    console.log("registered");
+    console.log(response);
+
+    if (response.error) {
+        error.register = true;
+        error.registerMessage = response.message;
+        return;
+    }
+
+    let user = response.user;
+    userStore.setUser(user);
+    userStore.setLoggedIn(true);
+    router.push({ path: '/opciones' });
+
+}
+
+
+const addSignUpMode = () => {
+    container.value.classList.add("sign-up-mode");
+}
+
+const removeSignUpMode = () => {
+    container.value.classList.remove("sign-up-mode");
+}
 
 const loginRules = computed(() => {
     return {
@@ -663,7 +749,7 @@ const loginRules = computed(() => {
 
 const registerRules = computed(() => {
     return {
-        username: {
+        name: {
             required: helpers.withMessage('El nombre de usuario es requerido', required),
             minLength: helpers.withMessage('El nombre de usuario debe contener al menos 6 caracteres', minLength(6)),
         },
@@ -680,29 +766,6 @@ const registerRules = computed(() => {
 
 const v$login = useVuelidate(loginRules, loginData);
 const v$register = useVuelidate(registerRules, registerData);
-
-onMounted(() => {
-
-    const currentPage = route.params.auth;
-
-    if (currentPage === "login") {
-        removeSignUpMode();
-    }
-    else if (currentPage === "registrarse") {
-        addSignUpMode();
-    }
-    else {
-        removeSignUpMode();
-    }
-});
-
-const addSignUpMode = () => {
-    container.value.classList.add("sign-up-mode");
-}
-
-const removeSignUpMode = () => {
-    container.value.classList.remove("sign-up-mode");
-}
 
 definePageMeta({
     layout: "auth",
