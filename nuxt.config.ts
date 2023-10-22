@@ -22,5 +22,10 @@ export default defineNuxtConfig({
       name: 'page',
       mode: 'out-in'
     }
+  },
+  googleFonts: {
+    families: {
+      Poppins: [400, 500, 600, 700],
+    }
   }
 })
