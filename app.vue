@@ -6,9 +6,9 @@
 </template>
 <style>
 body {
-  background: url("/background.png");
+  /* background: url("/background.png");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   font-family: "Poppins", sans-serif;
 }
 
