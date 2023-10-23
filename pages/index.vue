@@ -1,9 +1,5 @@
 <template>
-    <div>
-        <HomeBanner />
-        <HomeOptions />
-        <HomeAccordion id="comoFunciona" />
-        <HomeAbout id="nosotros" />
-        <HomeContact id="contacto" />
+    <div class="pl-28 py-10">
+        <HomeConstruction />
     </div>
 </template>
