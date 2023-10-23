@@ -1,7 +1,7 @@
 <template>
-    <button :type="type"
-        class="cursor-pointer mt-2 px-6 py-2 rounded-full bg-darken-blue disabled:bg-darken-blue/30 text-white disabled:cursor-not-allowed"
-        :disabled="disabled">
+    <button
+        class="cursor-pointer px-6 py-2 rounded-md bg-primary-700 disabled:bg-primary/30 text-white disabled:cursor-not-allowed"
+        :disabled="disabled" :type="type">
         {{ text }}
     </button>
 </template>
