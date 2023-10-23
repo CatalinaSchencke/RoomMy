@@ -1,6 +1,6 @@
 <template>
-    <div class="inline-flex bg-secondary text-white px-4 py-1 rounded-full font-bold tracking-widest">
-        {{ text }}
+    <div class="text-center text-white rounded-full font-bold tracking-widest uppercase">
+        <slot></slot>
     </div>
 </template>
 <script setup>
