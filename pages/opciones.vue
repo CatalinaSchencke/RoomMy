@@ -22,7 +22,7 @@
                 </nuxt-link>
             </div>
             <div class=" lg:w-[18%] lg:h-auto lg:relative grid justify-items-center">
-                <img src="home/roomie.jpg" alt="" class="hidden lg:block rounded-[40px]">
+                <img src="/home/roomie.jpg" alt="" class="hidden lg:block rounded-[40px]">
                 <nuxt-link to="/form/parte1"
                     class="drop-shadow-md flex justify-center lg:absolute lg:top-[82%] bg-white w-[80%] rounded-full lg:py-2">
                     <button class="text-center text-lg [1024px]-[1390px]:text-[10px] lg:text-base  lg:font-medium">
