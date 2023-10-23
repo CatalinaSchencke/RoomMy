@@ -1,5 +1,5 @@
 <template>
-    <header class="px-28 py-10">
+    <header class="px-6 lg:px-28 py-10">
         <nav>
             <div>
                 <nuxt-link to="/">

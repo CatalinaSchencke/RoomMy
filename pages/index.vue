@@ -1,5 +1,5 @@
 <template>
-    <div class="pl-28 py-10">
+    <div class="px-6 lg:pl-28 lg:pr-0 lg:py-5">
         <HomeConstruction />
     </div>
 </template>
