@@ -1,5 +1,5 @@
 <template>
-    <div class="px-28 py-10">
+    <div class="px-6 sm:px-10 lg:px-28 lg:py-5">
         <CommonPill class="inline-flex py-1 px-4 bg-secondary">
             <p>En construcción</p>
         </CommonPill>
@@ -134,7 +134,8 @@
                 <li>
                     Recibir solicitudes de información: Puedes visualizar la compatibilidad de quien consulta y decidir si
                     enviar la información de contacto.
-            </li>
-        </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-</div></template>
+</template>
