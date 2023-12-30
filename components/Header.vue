@@ -1,9 +1,9 @@
 <template>
-    <header class="px-6 lg:px-28 py-10">
+    <header class="px-6 lg:px-20 py-10">
         <nav>
             <div>
                 <nuxt-link to="/">
-                    <img src="/logo.png" alt="RoomMy Logo" width="200" height="200" />
+                    <NuxtImg src="/logo.svg" alt="HomeMatch logo" width="200" placeholder />
                 </nuxt-link>
             </div>
         </nav>
